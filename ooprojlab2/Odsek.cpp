@@ -37,16 +37,15 @@ Odsek::~Odsek() {
 
 void Odsek::prikaziOdsek(ostream& out) {
 	out << "Odsek: " << naziv << ", katedra " << katedra << endl;
-	out << "Broj studenata: " << br_studenata << endl;
+	out << "Broj studenata: " << br_studenata << endl << endl;
 	for (int i = 0; i < br_studenata; i++) {
-		out << endl;
 		studenti[i]->prikaziStudenta(out);
-		out << endl;
 	}
-	out << "Spisak predmeta: " << endl;
+	out << endl << "Spisak predmeta: " << endl;
 	for (int i = 0; i < br_predmeta; i++) {
 		out << "	" << i + 1 << ") ";
-		out << predmeti[i]->sifra << " " << predmeti[i]->naziv << " " << predmeti[i]->espb << endl;
+		out << predmeti[i]->sifra << " " << predmeti[i]->naziv << " " << predmeti[i]->espb << " " << 
+			predmeti[i]->br_studenata << endl;
 	}
 }
 
@@ -64,4 +63,13 @@ void Odsek::dodajStudenta(Student* student) {
 		studenti = pom_studenti;
 	}
 	br_studenata += 1;
+}
+
+Predmet* Odsek::getPredmet(const char* naziv) {
+	int i = 0;
+	while (i < br_predmeta and strcmp(naziv, predmeti[i]->getNaziv()) != 0)
+		i += 1;
+	if (i == br_predmeta)
+		throw exception("Nepostojeci predmet");
+	return predmeti[i];
 }

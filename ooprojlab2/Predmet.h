@@ -25,6 +25,7 @@ private:
 
 public:
 	char* getNaziv();
+	void dodajStudenta(Student* stud);
 };
 
 inline char* Predmet::getNaziv() {

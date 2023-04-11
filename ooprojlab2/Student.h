@@ -26,5 +26,6 @@ public:
 
 	void prikaziStudenta(ostream& out);
 	void postaviOdsek(Odsek* odsek);
+	void dodajPredmet(Predmet* predmet);
 };
 

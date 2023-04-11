@@ -50,20 +50,26 @@ void Fakultet::dodajOdsek(const char* ime, const char* katedra, int br_predmeta,
 void Fakultet::prikazi(ostream& out) {
 	out << naziv << " since ";
 	datum_osnivanja.prikaziDatum(out);
-	out << endl;
+	out << "------------------------------" << endl;
 	for (int i = 0; i < br_odseka; i++) {
 		out << i + 1 << ". ";
 		odseci[i]->prikaziOdsek(out);
-		out << endl;
+		out << "------------------------------" << endl;
 	}
 }
 
-void Fakultet::upisiStudenta(Student* student, const char* ime_odseka) {
+void Fakultet::upisiStudenta(Student* student, const char* ime_odseka, const char* predmeti[], int brpr) {
 	int i = 0;
 	while (i < br_odseka and strcmp(ime_odseka, odseci[i]->getNaziv()) != 0)
 		i += 1;
 	if (i == br_odseka)
 		throw exception("Unet pogresan naziv odseka");
-	odseci[i]->dodajStudenta(student);
-	student->postaviOdsek(odseci[i]);
+	Odsek* odsek = odseci[i];
+	odsek->dodajStudenta(student);
+	student->postaviOdsek(odsek);
+	for (int i = 0; i < brpr; i++) {
+		Predmet* p = odsek->getPredmet(predmeti[i]);
+		p->dodajStudenta(student);
+		student->dodajPredmet(p);
+	}
 }

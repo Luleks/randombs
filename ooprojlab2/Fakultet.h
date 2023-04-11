@@ -26,7 +26,7 @@ public:
 	static Fakultet* getFakultet();
 	static void setFakultet(const char* ime, Datum dat_osn);
 
-	void upisiStudenta(Student* student, const char* ime_odseka);
+	void upisiStudenta(Student* student, const char* ime_odseka, const char* predmeti[], int brpr);
 	void dodajOdsek(const char* ime, const char* katedra, int br_predmeta, const char* predmeti[]);
 
 	void prikazi(ostream& out);

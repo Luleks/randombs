@@ -43,3 +43,19 @@ void Student::prikaziStudenta(ostream& out) {
 void Student::postaviOdsek(Odsek* odsek) {
 	this->odsek = odsek;
 }
+
+void Student::dodajPredmet(Predmet* predmet) {
+	if (br_predmeta == 0) {
+		predmeti = new Predmet * [1];
+		predmeti[br_predmeta] = predmet;
+	}
+	else {
+		Predmet** pom_predmeti = new Predmet * [br_predmeta + 1];
+		for (int i = 0; i < br_predmeta; i++)
+			pom_predmeti[i] = predmeti[i];
+		pom_predmeti[br_predmeta] = predmet;
+		delete[] predmeti;
+		predmeti = pom_predmeti;
+	}
+	br_predmeta += 1;
+}

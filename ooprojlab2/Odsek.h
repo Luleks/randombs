@@ -30,6 +30,7 @@ private:
 
 	void prikaziOdsek(ostream& out);
 	void dodajStudenta(Student* student);
+	Predmet* getPredmet(const char* naziv);
 
 	friend class Fakultet;
 

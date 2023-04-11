@@ -28,3 +28,19 @@ Predmet::~Predmet() {
 	naziv = 0;
 	sifra = 0;
 }
+
+void Predmet::dodajStudenta(Student* stud) {
+	if (br_studenata == 0) {
+		studenti = new Student * [1];
+		studenti[br_studenata] = stud;
+	}
+	else {
+		Student** pom_studenti = new Student * [br_studenata + 1];
+		for (int i = 0; i < br_studenata; i++)
+			pom_studenti[i] = studenti[i];
+		pom_studenti[br_studenata] = stud;
+		delete[] studenti;
+		studenti = pom_studenti;
+	}
+	br_studenata += 1;
+}
