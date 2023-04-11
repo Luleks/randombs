@@ -25,10 +25,15 @@ private:
 
 public:
 	char* getNaziv();
+	int getESPB();
 	void dodajStudenta(Student* stud);
+	void ukloniStudenta(Student* stud);
 };
 
 inline char* Predmet::getNaziv() {
 	return naziv;
 }
 
+inline int Predmet::getESPB() {
+	return espb;
+}

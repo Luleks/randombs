@@ -27,5 +27,13 @@ public:
 	void prikaziStudenta(ostream& out);
 	void postaviOdsek(Odsek* odsek);
 	void dodajPredmet(Predmet* predmet);
+	void zameniPredmet(const char* stari, const char* novi);
+	void izaberiPredmet(const char* predmet);
+
+	int getIndex();
+	int izracunajESPB();
 };
 
+inline int Student::getIndex() {
+	return index;
+}

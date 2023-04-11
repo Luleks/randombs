@@ -44,3 +44,16 @@ void Predmet::dodajStudenta(Student* stud) {
 	}
 	br_studenata += 1;
 }
+
+void Predmet::ukloniStudenta(Student* stud) {
+	if (br_studenata == 0)
+		throw exception("Nije moguce ukloniti studenta koji ne slusa predmet");
+	int i = 0;
+	while (i < br_studenata and stud->getIndex() != studenti[i]->getIndex())
+		i += 1;
+	if (i == br_studenata)
+		throw exception("Student ne pohadja ovaj predmet");
+	for (int j = i; j < br_studenata - 1; j++)
+		studenti[j] = studenti[j + 1];
+	br_studenata -= 1;
+}

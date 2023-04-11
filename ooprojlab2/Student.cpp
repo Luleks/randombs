@@ -59,3 +59,29 @@ void Student::dodajPredmet(Predmet* predmet) {
 	}
 	br_predmeta += 1;
 }
+
+void Student::zameniPredmet(const char* stari, const char* novi) {
+	Predmet* p1 = odsek->getPredmet(stari);
+	Predmet* p2 = odsek->getPredmet(novi);
+	int i = 0;
+	while (i < br_predmeta and strcmp(p1->getNaziv(), predmeti[i]->getNaziv()) != 0)
+		i += 1;
+	if (i == br_predmeta)
+		throw exception("Unet je predmet koji student ne pohadja");
+	predmeti[i] = p2;
+	p2->dodajStudenta(this);
+	p1->ukloniStudenta(this);
+}
+
+void Student::izaberiPredmet(const char* predmet) {
+	Predmet* p1 = odsek->getPredmet(predmet);
+	p1->dodajStudenta(this);
+	dodajPredmet(p1);
+}
+
+int Student::izracunajESPB() {
+	int s = 0;
+	for (int i = 0; i < br_predmeta; i++)
+		s += predmeti[i]->getESPB();
+	return s;
+}

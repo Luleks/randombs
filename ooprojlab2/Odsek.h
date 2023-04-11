@@ -30,12 +30,12 @@ private:
 
 	void prikaziOdsek(ostream& out);
 	void dodajStudenta(Student* student);
-	Predmet* getPredmet(const char* naziv);
 
 	friend class Fakultet;
 
 public:
 	char* getNaziv();
+	Predmet* getPredmet(const char* naziv);
 };
 
 inline char* Odsek::getNaziv() {

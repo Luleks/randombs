@@ -13,20 +13,21 @@ class Odsek;
 class Fakultet {
 private:
 	char* naziv;
+	char* dekan;
 	Datum datum_osnivanja;
 	static Fakultet* fakultet;
 	Odsek** odseci;
 	int br_odseka;
 
-	Fakultet(const char* ime, Datum dat_osn);
+	Fakultet(const char* ime, Datum dat_osn, const char* dekan);
 
 public:
 	~Fakultet();
 
 	static Fakultet* getFakultet();
-	static void setFakultet(const char* ime, Datum dat_osn);
+	static void setFakultet(const char* ime, Datum dat_osn, const char* dekan);
 
-	void upisiStudenta(Student* student, const char* ime_odseka, const char* predmeti[], int brpr);
+	void upisiStudenta(Student* student, const char* ime_odseka);
 	void dodajOdsek(const char* ime, const char* katedra, int br_predmeta, const char* predmeti[]);
 
 	void prikazi(ostream& out);
