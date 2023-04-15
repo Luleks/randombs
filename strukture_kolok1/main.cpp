@@ -64,10 +64,15 @@ int main() {
 	//sll.selectionSort();
 	//sll.insertionSort();
 	//sll.print();
-	sll.GroupElements();
+	//sll.GroupElements();
+	//sll.print();
+	//sll.MoveHigher(0);
+	//sll.print();
+	//sll.SortList();
+	//sll.print();
+	SLinkedList<int>* l = sll.SplitOrMove();
 	sll.print();
-	sll.MoveHigher(0);
-	sll.print();
+	l->print();
 	
 
 	/* Static doubly linked list
