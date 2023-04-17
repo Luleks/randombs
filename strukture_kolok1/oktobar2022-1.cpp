@@ -1,34 +1,4 @@
-int MoveHigher(int value) {
-	StudentNode* prev, * temp, * save, * temp_prev;
-	if (head->info > value)
-		prev = head;
-	else
-		prev = 0;
-	temp_prev = head;
-	for (temp = head->link; temp != 0; temp = save) {
-		save = temp->link;
-		if (temp->info > value) {
-			if (prev == 0) {
-				temp_prev->link = temp->link;
-				temp->link = head;
-				head = temp;
-			}
-			else if (prev->link != temp) {
-				temp_prev->link = temp->link;
-				temp->link = prev->link;
-				prev->link = temp;
-			}
-			prev = temp;
-		}
-		else
-			temp_prev = temp_prev->link;
-	}
-	return 0;
-}
-
-ili 
-
-int MoveHigher(int value) {
+ int MoveHigher(int value) {
 	if (head == 0)
 		return 0;
 	SLLNode<T>* prev;
