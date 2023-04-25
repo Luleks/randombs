@@ -78,6 +78,12 @@ namespace Podaci
                 _listaOsoba.RemoveAt(0);
             }
         }
+
+        public void SortListValue()
+        {
+            if (Sort != null)
+                Sort(_listaOsoba);
+        }
         #endregion
 
         private static ListaOsoba _instance = null;

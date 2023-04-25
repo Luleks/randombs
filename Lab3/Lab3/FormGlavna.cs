@@ -73,6 +73,22 @@ namespace Lab3
             txtAdresa.Text = "";
             txtTelefon.Text = "";
             dtpDatRodj.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, 0);
+            ListaOsoba.Instance.Sort = new ListaOsoba.SortDelegate(sortByLastName);
+        }
+
+        private void sortByLastName(List<Osoba> l)
+        {
+            l.Sort(new NameComparer());
+        }
+
+        private void sortByFirstName(List<Osoba> l)
+        {
+            l.Sort(new SurnameComparer());
+        }
+
+        private void sortByBirthday(List<Osoba> l)
+        {
+            l.Sort(new BirthdayComparer());
         }
         #endregion
 
@@ -114,7 +130,7 @@ namespace Lab3
                 }
                 MessageBox.Show("Osoba je uspesno dodata u listu osoba", "Obavestenje",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-         
+
             }
             else
             {
@@ -251,6 +267,22 @@ namespace Lab3
             String datumRodj = o.DatumRodjenja.Substring(3, 3) + o.DatumRodjenja.Substring(0, 3) +
                 o.DatumRodjenja.Substring(6);
             dtpDatRodj.Text = datumRodj;
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            ListaOsoba.Instance.SortListValue();
+            ucitajListBox();
+        }
+
+        private void cbxSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxSort.SelectedIndex == 1)
+                ListaOsoba.Instance.Sort = new ListaOsoba.SortDelegate(sortByLastName);
+            else if (cbxSort.SelectedIndex == 0)
+                ListaOsoba.Instance.Sort = new ListaOsoba.SortDelegate(sortByFirstName);
+            else if (cbxSort.SelectedIndex == 2)
+                ListaOsoba.Instance.Sort = new ListaOsoba.SortDelegate(sortByBirthday);
         }
         #endregion
     }

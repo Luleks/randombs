@@ -246,16 +246,18 @@
             btnSort.Text = "Sortiraj listu";
             btnSort.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSort.UseVisualStyleBackColor = true;
+            btnSort.Click += btnSort_Click;
             // 
             // cbxSort
             // 
             cbxSort.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxSort.FormattingEnabled = true;
-            cbxSort.Items.AddRange(new object[] { "PO IMENU", "PO PREZIMENU", "PO DATUMU RODJENJA" });
+            cbxSort.Items.AddRange(new object[] { "PO IMENU", "PO PREZIMENU", "PO DAT RODJ" });
             cbxSort.Location = new Point(371, 448);
             cbxSort.Name = "cbxSort";
             cbxSort.Size = new Size(101, 23);
             cbxSort.TabIndex = 4;
+            cbxSort.SelectedIndexChanged += cbxSort_SelectedIndexChanged;
             // 
             // FormGlavna
             // 
