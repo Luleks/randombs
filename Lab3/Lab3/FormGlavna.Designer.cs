@@ -200,7 +200,6 @@
             lbxListOsoba.ScrollAlwaysVisible = true;
             lbxListOsoba.Size = new Size(460, 199);
             lbxListOsoba.TabIndex = 0;
-            lbxListOsoba.DoubleClick += lbxListOsoba_DoubleClick;
             // 
             // lblListaOsoba
             // 
