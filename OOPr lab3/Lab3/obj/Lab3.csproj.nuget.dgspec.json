@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Lab3\\Lab3.csproj": {}
+    "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Lab3\\Lab3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\DateTimeExtensions\\DateTimeExtensions.csproj": {
+    "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\DateTimeExtensions\\DateTimeExtensions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\DateTimeExtensions\\DateTimeExtensions.csproj",
+        "projectUniqueName": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\DateTimeExtensions\\DateTimeExtensions.csproj",
         "projectName": "DateTimeExtensions",
-        "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\DateTimeExtensions\\DateTimeExtensions.csproj",
+        "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\DateTimeExtensions\\DateTimeExtensions.csproj",
         "packagesPath": "C:\\Users\\Luka&Jana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\DateTimeExtensions\\obj\\",
+        "outputPath": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\DateTimeExtensions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luka&Jana\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Lab3\\Lab3.csproj": {
+    "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Lab3\\Lab3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Lab3\\Lab3.csproj",
+        "projectUniqueName": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Lab3\\Lab3.csproj",
         "projectName": "Lab3",
-        "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Lab3\\Lab3.csproj",
+        "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Lab3\\Lab3.csproj",
         "packagesPath": "C:\\Users\\Luka&Jana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Lab3\\obj\\",
+        "outputPath": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Lab3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luka&Jana\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,11 +83,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\DateTimeExtensions\\DateTimeExtensions.csproj": {
-                "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\DateTimeExtensions\\DateTimeExtensions.csproj"
+              "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\DateTimeExtensions\\DateTimeExtensions.csproj": {
+                "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\DateTimeExtensions\\DateTimeExtensions.csproj"
               },
-              "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Podaci\\Podaci.csproj": {
-                "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Podaci\\Podaci.csproj"
+              "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Podaci\\Podaci.csproj": {
+                "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Podaci\\Podaci.csproj"
               }
             }
           }
@@ -124,14 +124,14 @@
         }
       }
     },
-    "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Podaci\\Podaci.csproj": {
+    "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Podaci\\Podaci.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Podaci\\Podaci.csproj",
+        "projectUniqueName": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Podaci\\Podaci.csproj",
         "projectName": "Podaci",
-        "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Podaci\\Podaci.csproj",
+        "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Podaci\\Podaci.csproj",
         "packagesPath": "C:\\Users\\Luka&Jana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Podaci\\obj\\",
+        "outputPath": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Podaci\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luka&Jana\\AppData\\Roaming\\NuGet\\NuGet.Config",

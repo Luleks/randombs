@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Podaci\\Podaci.csproj",
+      "projectUniqueName": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Podaci\\Podaci.csproj",
       "projectName": "Podaci",
-      "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Podaci\\Podaci.csproj",
+      "projectPath": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Podaci\\Podaci.csproj",
       "packagesPath": "C:\\Users\\Luka&Jana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Luka&Jana\\Desktop\\Lab3\\Podaci\\obj\\",
+      "outputPath": "C:\\Users\\Luka&Jana\\Desktop\\OOPr lab3\\Podaci\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Luka&Jana\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -8,19 +8,12 @@ namespace Lab3
         public FormGlavna()
         {
             InitializeComponent();
-            Init();
+            cbxSort.SelectedIndex = 1;
+            dtpDatRodj.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 
+                DateTime.Now.Day, 0, 0, 0, 0);
         }
 
         #region Methods
-
-        private void Init()
-        {
-            btnObrisiJednu.Enabled = false;
-            btnSort.Enabled = false;
-            btnObrisiSve.Enabled = false;
-            cbxSort.Enabled = false;
-        }
-
         private bool validacijaKontrola()
         {
             if (String.IsNullOrEmpty(txtIme.Text))
@@ -62,11 +55,6 @@ namespace Lab3
 
         private void uspesnoDodato()
         {
-            btnObrisiJednu.Enabled = true;
-            btnSort.Enabled = true;
-            btnObrisiSve.Enabled = true;
-            cbxSort.Enabled = true;
-            cbxSort.SelectedIndex = 1;
             txtIme.Focus();
             txtIme.Text = "";
             txtPrezime.Text = "";
@@ -153,6 +141,12 @@ namespace Lab3
             if (lbxListOsoba.SelectedValue == null)
             {
                 MessageBox.Show("Potrebno je izabrati osobu", "Obavestenje",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (ListaOsoba.Instance.ListOsobaValues.Count == 0)
+            {
+                MessageBox.Show("Lista osoba je prazna", "Obavestenje",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -257,7 +251,15 @@ namespace Lab3
 
         private void btnSort_Click(object sender, EventArgs e)
         {
+            if (ListaOsoba.Instance.ListOsobaValues.Count == 0)
+            {
+                MessageBox.Show("Lista osoba je prazna", "Obavestenje",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             ListaOsoba.Instance.SortListValue();
+            MessageBox.Show("Lista osoba je sortirana", "Obavestenje",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             ucitajListBox();
         }
 
