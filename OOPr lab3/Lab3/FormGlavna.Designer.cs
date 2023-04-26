@@ -222,7 +222,7 @@
             btnObrisiJednu.Text = "Obrisi izabranu osobu";
             btnObrisiJednu.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnObrisiJednu.UseVisualStyleBackColor = true;
-            btnObrisiJednu.Click += btnObrisiJednu_Click;
+            
             // 
             // btnObrisiSve
             // 
