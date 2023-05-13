@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ooprLab4", "ooprLab4\ooprLab4.csproj", "{2EA01FD6-F122-4281-B9C6-73407DDD5833}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Podaci", "Podaci\Podaci.csproj", "{3F33D211-6DE7-49C7-82F5-77999107CB13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions", "Extensions\Extensions.csproj", "{867757DE-BDDE-49B2-A2B6-374A398701A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EA01FD6-F122-4281-B9C6-73407DDD5833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA01FD6-F122-4281-B9C6-73407DDD5833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA01FD6-F122-4281-B9C6-73407DDD5833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA01FD6-F122-4281-B9C6-73407DDD5833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F33D211-6DE7-49C7-82F5-77999107CB13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F33D211-6DE7-49C7-82F5-77999107CB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F33D211-6DE7-49C7-82F5-77999107CB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F33D211-6DE7-49C7-82F5-77999107CB13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{867757DE-BDDE-49B2-A2B6-374A398701A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867757DE-BDDE-49B2-A2B6-374A398701A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867757DE-BDDE-49B2-A2B6-374A398701A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867757DE-BDDE-49B2-A2B6-374A398701A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {767EBEF1-20EE-4FA2-A3C9-686F833A1FE5}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+C:\Users\Luka&Jana\Desktop\ooprLab4\Extensions\bin\Debug\Extensions.dll
+C:\Users\Luka&Jana\Desktop\ooprLab4\Extensions\bin\Debug\Extensions.pdb
+C:\Users\Luka&Jana\Desktop\ooprLab4\Extensions\obj\Debug\Extensions.csproj.AssemblyReference.cache
+C:\Users\Luka&Jana\Desktop\ooprLab4\Extensions\obj\Debug\Extensions.csproj.CoreCompileInputs.cache
+C:\Users\Luka&Jana\Desktop\ooprLab4\Extensions\obj\Debug\Extensions.dll
+C:\Users\Luka&Jana\Desktop\ooprLab4\Extensions\obj\Debug\Extensions.pdb

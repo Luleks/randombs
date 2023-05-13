@@ -1,0 +1,9 @@
+C:\Users\Luka&Jana\Desktop\ooprLab4\Podaci\bin\Debug\Podaci.dll
+C:\Users\Luka&Jana\Desktop\ooprLab4\Podaci\bin\Debug\Podaci.pdb
+C:\Users\Luka&Jana\Desktop\ooprLab4\Podaci\obj\Debug\Podaci.csproj.AssemblyReference.cache
+C:\Users\Luka&Jana\Desktop\ooprLab4\Podaci\obj\Debug\Podaci.csproj.CoreCompileInputs.cache
+C:\Users\Luka&Jana\Desktop\ooprLab4\Podaci\obj\Debug\Podaci.dll
+C:\Users\Luka&Jana\Desktop\ooprLab4\Podaci\obj\Debug\Podaci.pdb
+C:\Users\Luka&Jana\Desktop\ooprLab4\Podaci\bin\Debug\Extensions.dll
+C:\Users\Luka&Jana\Desktop\ooprLab4\Podaci\bin\Debug\Extensions.pdb
+C:\Users\Luka&Jana\Desktop\ooprLab4\Podaci\obj\Debug\Podaci.csproj.CopyComplete
