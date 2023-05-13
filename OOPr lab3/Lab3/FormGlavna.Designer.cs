@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGlavna));
             groupBox1 = new GroupBox();
+            txtIndex = new TextBox();
+            lblIndex = new Label();
             btnPonisti = new Button();
             txtAdresa = new TextBox();
             lblAdresa = new Label();
@@ -53,6 +55,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtIndex);
+            groupBox1.Controls.Add(lblIndex);
             groupBox1.Controls.Add(btnPonisti);
             groupBox1.Controls.Add(txtAdresa);
             groupBox1.Controls.Add(lblAdresa);
@@ -72,6 +76,24 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Podaci o osobi";
             // 
+            // txtIndex
+            // 
+            txtIndex.Location = new Point(324, 100);
+            txtIndex.MaxLength = 5;
+            txtIndex.Name = "txtIndex";
+            txtIndex.Size = new Size(128, 23);
+            txtIndex.TabIndex = 11;
+            txtIndex.KeyPress += textBox1_KeyPress;
+            // 
+            // lblIndex
+            // 
+            lblIndex.AutoSize = true;
+            lblIndex.Location = new Point(247, 104);
+            lblIndex.Name = "lblIndex";
+            lblIndex.Size = new Size(74, 15);
+            lblIndex.TabIndex = 10;
+            lblIndex.Text = "Broj indeksa:";
+            // 
             // btnPonisti
             // 
             btnPonisti.Image = (Image)resources.GetObject("btnPonisti.Image");
@@ -86,18 +108,18 @@
             // 
             // txtAdresa
             // 
-            txtAdresa.Location = new Point(247, 85);
+            txtAdresa.Location = new Point(359, 66);
             txtAdresa.MaxLength = 60;
             txtAdresa.Multiline = true;
             txtAdresa.Name = "txtAdresa";
             txtAdresa.ScrollBars = ScrollBars.Vertical;
-            txtAdresa.Size = new Size(205, 38);
+            txtAdresa.Size = new Size(93, 24);
             txtAdresa.TabIndex = 4;
             // 
             // lblAdresa
             // 
             lblAdresa.AutoSize = true;
-            lblAdresa.Location = new Point(247, 67);
+            lblAdresa.Location = new Point(247, 71);
             lblAdresa.Name = "lblAdresa";
             lblAdresa.Size = new Size(106, 15);
             lblAdresa.TabIndex = 9;
@@ -222,7 +244,7 @@
             btnObrisiJednu.Text = "Obrisi izabranu osobu";
             btnObrisiJednu.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnObrisiJednu.UseVisualStyleBackColor = true;
-            
+            btnObrisiJednu.Click += btnObrisiJednu_Click;
             // 
             // btnObrisiSve
             // 
@@ -252,7 +274,6 @@
             // 
             cbxSort.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxSort.FormattingEnabled = true;
-            cbxSort.Items.AddRange(new object[] { "PO IMENU", "PO PREZIMENU", "PO DAT RODJ" });
             cbxSort.Location = new Point(371, 448);
             cbxSort.Name = "cbxSort";
             cbxSort.Size = new Size(101, 23);
@@ -309,5 +330,7 @@
         private Button btnObrisiSve;
         private Button btnSort;
         private ComboBox cbxSort;
+        private Label lblIndex;
+        private TextBox txtIndex;
     }
 }

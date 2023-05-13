@@ -8,9 +8,15 @@
         String _brojTelefona;
         String _adresa;
         String _datumRodjenja;
+        String _brIndeksa;
         #endregion
 
         #region Properties
+        public String BrIndeksa
+        {
+            get { return _brIndeksa; }
+            set { _brIndeksa = value; }
+        }
         public String Ime
         {
             get { return _ime; }
@@ -41,7 +47,7 @@
         {
             get 
             {
-                return Ime + " " + Prezime + " BrTel: " + BrojTelefona + " " +
+                return BrIndeksa.ToString() + " " + Ime + " " + Prezime + " BrTel: " + BrojTelefona + " " +
                     "DatRodj: " + DatumRodjenja + " Adresa: " + Adresa;
             }
         }
@@ -64,15 +70,17 @@
             _brojTelefona = "";
             _adresa = "";
             _datumRodjenja = "";
+            _brIndeksa = "";
         }
 
-        public Osoba(String ime, String prezime, String brTel, String adresa, String datRodj)
+        public Osoba(String ime, String prezime, String brTel, String adresa, String datRodj, String index)
         {
             _ime = ime;
             _prezime = prezime;
             _brojTelefona = brTel;
             _adresa = adresa;
             _datumRodjenja = datRodj;
+            _brIndeksa = index;
         }
         #endregion
 

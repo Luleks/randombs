@@ -8,8 +8,7 @@ namespace Lab3
         public FormGlavna()
         {
             InitializeComponent();
-            cbxSort.SelectedIndex = 1;
-            dtpDatRodj.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 
+            dtpDatRodj.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month,
                 DateTime.Now.Day, 0, 0, 0, 0);
         }
 
@@ -41,6 +40,13 @@ namespace Lab3
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
+
+            if (String.IsNullOrEmpty(txtIndex.Text))
+            {
+                MessageBox.Show("Indeks ne sme biti prazno polje", "Obavestenje",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
             return true;
         }
 
@@ -60,6 +66,7 @@ namespace Lab3
             txtPrezime.Text = "";
             txtAdresa.Text = "";
             txtTelefon.Text = "";
+            txtIndex.Text = "";
             dtpDatRodj.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, 0);
             ListaOsoba.Instance.SortType = new ListaOsoba.SortTypeDelegate(Osoba.CompareByLastName);
         }
@@ -69,7 +76,10 @@ namespace Lab3
         #region EventHandling
         private void FormGlavna_Load(object sender, EventArgs e)
         {
-
+            cbxSort.Items.Add("PO IMENU");
+            cbxSort.Items.Add("PO PREZIMENU");
+            cbxSort.Items.Add("PO DAT RODJ");
+            cbxSort.SelectedIndex = 1;
         }
 
         private void FormGlavna_DoubleClick(object sender, EventArgs e)
@@ -90,10 +100,11 @@ namespace Lab3
             String adresa = txtAdresa.Text.Trim();
             String telefon = txtTelefon.Text.Trim();
             String datRodj = dtpDatRodj.Text;
+            String index = txtIndex.Text;
 
             if (lbxListOsoba.SelectedValue == null)
             {
-                Osoba o = new Osoba(ime, prezime, telefon, adresa, datRodj);
+                Osoba o = new Osoba(ime, prezime, telefon, adresa, datRodj, index);
 
                 bool result = ListaOsoba.Instance.dodajOsobu(o);
                 if (!result)
@@ -114,6 +125,7 @@ namespace Lab3
                 o.Prezime = prezime;
                 o.Adresa = adresa;
                 o.DatumRodjenja = datRodj;
+                o.BrIndeksa = index;
                 MessageBox.Show("Osoba je uspesno modifikovana", "Obavestenje",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -132,6 +144,8 @@ namespace Lab3
             txtPrezime.Text = "";
             txtAdresa.Text = "";
             txtTelefon.Text = "";
+            txtIndex.Text = "";
+            txtIndex.Text = "";
             dtpDatRodj.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, 0);
             lbxListOsoba.ClearSelected();
         }
@@ -244,6 +258,7 @@ namespace Lab3
             txtPrezime.Text = o.Prezime;
             txtTelefon.Text = o.BrojTelefona;
             txtAdresa.Text = o.Adresa;
+            txtIndex.Text = o.BrIndeksa;
             String datumRodj = o.DatumRodjenja.Substring(3, 3) + o.DatumRodjenja.Substring(0, 3) +
                 o.DatumRodjenja.Substring(6);
             dtpDatRodj.Text = datumRodj;
@@ -272,6 +287,16 @@ namespace Lab3
             else if (cbxSort.SelectedIndex == 2)
                 ListaOsoba.Instance.SortType = new ListaOsoba.SortTypeDelegate(Osoba.CompareByBirthDay);
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar))
+                e.Handled = true;
+        }
+
         #endregion
+
+
+
     }
 }
