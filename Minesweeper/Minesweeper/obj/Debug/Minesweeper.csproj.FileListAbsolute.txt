@@ -1,0 +1,15 @@
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\bin\Debug\Minesweeper.exe.config
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\bin\Debug\Minesweeper.exe
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\bin\Debug\Minesweeper.pdb
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.AssemblyReference.cache
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.SuggestedBindingRedirects.cache
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\obj\Debug\Minesweeper.FormGlavna.resources
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Properties.Resources.resources
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.GenerateResource.cache
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.CoreCompileInputs.cache
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\obj\Debug\Minesweeper.exe
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\obj\Debug\Minesweeper.pdb
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\bin\Debug\Game.dll
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\bin\Debug\Game.pdb
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\obj\Debug\Minesweeper.FormSettings.resources
+C:\Users\Luka&Jana\Desktop\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.CopyComplete

@@ -1,0 +1,6 @@
+C:\Users\Luka&Jana\Desktop\Minesweeper\Game\bin\Debug\Game.dll
+C:\Users\Luka&Jana\Desktop\Minesweeper\Game\bin\Debug\Game.pdb
+C:\Users\Luka&Jana\Desktop\Minesweeper\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+C:\Users\Luka&Jana\Desktop\Minesweeper\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Luka&Jana\Desktop\Minesweeper\Game\obj\Debug\Game.dll
+C:\Users\Luka&Jana\Desktop\Minesweeper\Game\obj\Debug\Game.pdb
