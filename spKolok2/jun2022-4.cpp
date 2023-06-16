@@ -3,36 +3,37 @@ int getMaxConnectionsDisjointSubgraph() {
 		return 0;
 	GraphNode* temp = start;
 	while (temp != 0) {
-		temp->status = 1;
+		temp->status = 0;
 		temp = temp->next;
 	}
-	int maxCount = 0, curCount = 0;
 	temp = start;
-	GraphNode* toStartSearchFrom = temp;
-	stack<GraphNode*> stek;
+	GraphNode* nextNode = temp;
+	int maxCount = 0, curCount;
+	queue<GraphNode*> qju;
 	while (temp != 0) {
-		stek.push(temp);
-		temp->status = 2;
-		while (not stek.empty()) {
-			temp = stek.top();
-			stek.pop();
+		qju.push(temp);
+		temp->status = 1;
+		curCount = 0;
+		while (not qju.empty()) {
+			temp = qju.front();
+			qju.pop();
+			temp->status = 2;
 			GraphEdge* edge = temp->adj;
 			while (edge != 0) {
-				if (edge->dest->status != 3) {
-					curCount += 1;
-					stek.push(edge->dest);
-					edge->dest->status = 2;
+				if (edge->dest->status == 0) {
+					qju.push(edge->dest);
+					edge->dest->status = 1;
 				}
-				edge = edge->next;;
+				if (edge->dest->status != 2)
+					curCount += 1;
+				edge = edge->next;
 			}
-			temp->status = 3;
 		}
 		if (curCount > maxCount)
 			maxCount = curCount;
-		curCount = 0;
-		while (toStartSearchFrom != 0 and toStartSearchFrom->status != 1)
-			toStartSearchFrom = toStartSearchFrom->next;
-		temp = toStartSearchFrom;
-	}	
+		while (nextNode != 0 and nextNode->status != 0)
+			nextNode = nextNode->next;
+		temp = nextNode;
+	}
 	return maxCount;
 }

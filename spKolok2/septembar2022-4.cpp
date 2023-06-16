@@ -1,65 +1,64 @@
-void shortestPath(GraphNode* node1, GraphNode* node2) {
+void setStatus(int stat) {
 	GraphNode* temp = start;
 	while (temp != 0) {
-		temp->status = 1;
-		temp->distance = INT_MAX;
+		temp->status = stat;
 		temp->prev = 0;
+		temp->distance = 0;
 		temp = temp->next;
 	}
-	temp = node1;
-	temp->distance = 0;
-	PriorityQueue pqju(numOfElements);
-	pqju.insert(temp);
-	temp->status = 2;
-	while (not pqju.isEmpty()) {
-		temp = pqju.removeFirst();
-		temp->status = 3;
+}
+
+void breadthFirstVariant(GraphNode* node) {
+	setStatus(0);
+	queue<GraphNode*> qju;
+	GraphNode* temp = node;
+	qju.push(temp);
+	temp->status = 1;
+	while (not qju.empty()) {
+		temp = qju.front();
+		qju.pop();
+		temp->status = 2;
 		GraphEdge* edge = temp->adj;
 		while (edge != 0) {
-			if (edge->dest->status == 1) {
-				edge->dest->distance = temp->distance + edge->weight;
+			if (edge->dest->status == 0) {
 				edge->dest->prev = temp;
-				pqju.insert(edge->dest);
-				edge->dest->status = 2;
-			}
-			else if (edge->dest->status == 2) {
-				if (edge->dest->distance > temp->distance + edge->weight) {
-					pqju.update(edge->dest, temp->distance + edge->weight);
-					edge->dest->prev = temp;
-				}
+				edge->dest->status = 1;
+				qju.push(edge->dest);
 			}
 			edge = edge->next;
 		}
 	}
 }
 
-int numOfSameFlights(GraphNode* airport1, GraphNode* airport2, GraphNode* airportEnd) {
-	int* airports1 = new int[numOfElements];
-	int l1 = 0;
-	shortestPath(airport1, airportEnd);
-	GraphNode* temp = airportEnd->prev;
-	while (temp != airport1) {
-		airports1[l1++] = temp->key;
+int numOfSameFlights(GraphNode* node1, GraphNode* node2, GraphNode* end) {
+	if (start == 0)
+		return 0;
+	int* flights1 = new int[numOfElements];
+	int* flights2 = new int[numOfElements];
+	int len1 = 0, len2 = 0;
+	
+	breadthFirstVariant(node1);
+	GraphNode* temp = end;
+	while (temp->prev != 0 and temp != node1) {
+		flights1[len1++] = temp->key;
 		temp = temp->prev;
 	}
+	flights1[len1++] = node1->key;
 
-	int* airports2 = new int[numOfElements];
-	int l2 = 0;
-	shortestPath(airport2, airportEnd);
-	temp = airportEnd->prev;
-	while (temp != airport2) {
-		airports2[l2++] = temp->key;
+	breadthFirstVariant(node2);
+	temp = end;
+	while (temp->prev != 0 and temp != node2) {
+		flights2[len2++] = temp->key;
 		temp = temp->prev;
 	}
-
-	int count = 0;
-	map<int, bool> zajednicki;
-	for (int i = 0; i < l1; i++) {
-		zajednicki[airports1[i]] = true;
+	flights2[len2++] = node2->key;
+	
+	int sameFlights = 0;
+	for (int i = len1 - 1; i > 0; i--) {
+		for (int j = len2 - 1; j > 0; j--) {
+			if (flights1[i] == flights2[j] and flights1[i - 1] == flights2[j - 1])
+				sameFlights += 1;
+		}
 	}
-	for (int i = 0; i < l2; i++) {
-		if (zajednicki[airports2[i]])
-			count += 1;
-	}
-	return count;
+	return sameFlights;
 }

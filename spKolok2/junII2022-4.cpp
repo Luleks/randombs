@@ -1,3 +1,49 @@
+void bfs(GraphNode* node) {
+	GraphNode* temp = node;
+	queue<GraphNode*> qju;
+	qju.push(temp);
+	temp->status = 2;
+	while (not qju.empty()) {
+		temp = qju.front();
+		qju.pop();
+		temp->status = 3;
+		GraphEdge* edge = temp->adj;
+		while (edge != 0) {
+			if (edge->dest->status == 1) {
+				qju.push(edge->dest);
+				edge->dest->status = 2;
+				edge->dest->prev = temp;
+			}
+			edge = edge->next;
+		}
+	}
+}
+int BridgeCount(int a, int b) {
+	GraphNode* temp = start;
+	GraphNode* A = 0, * B = 0;
+	while (temp != 0) {
+		temp->status = 1;
+		temp->prev = 0;
+		if (temp->key == a)
+			A = temp;
+		if (temp->key == b)
+			B = temp;
+		temp = temp->next;
+	}
+	if (A == 0 or B == 0)
+		return -1;
+	bfs(A);
+	int count = 0;
+	temp = B;
+	while (temp != 0 and temp != A) {
+		count += 1;
+		temp = temp->prev;
+	}
+	return (temp == A) ? count : -1;
+}
+
+
+// ------------------------------ AKO JE GRAF TEZINSKI - DIJKSTRA ----------------------------------------
 int bridgeCount(int a, int b) {
 	if (start == 0)
 		return -1;
@@ -49,5 +95,5 @@ int bridgeCount(GraphNode* first, GraphNode* last) {
 		count += 1;
 		temp = temp->prev;
 	}
-	return temp == 0 ? -1 : count;
+	return (temp == A) ? count : -1;
 }

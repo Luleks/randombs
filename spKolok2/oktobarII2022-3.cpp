@@ -1,36 +1,32 @@
-BSTNode* findSibling(BSTNode* p) {
-	if (root == p)
+BSTNode* findSibling(BSTNode* node) {
+	if (root == 0)
 		return 0;
-	
 	queue<BSTNode*>* parents = new queue<BSTNode*>();
 	queue<BSTNode*>* children = new queue<BSTNode*>();
 	BSTNode* temp = root;
-	bool found = false;
-	
+	bool nodeFound = false;
 	parents->push(temp);
-
-	while (not parents->empty() and not found) {
+	while (not parents->empty() and not nodeFound) {
 		while (not parents->empty()) {
 			temp = parents->front();
 			parents->pop();
-			if (temp->right != 0) {
-				children->push(temp->right);
-				if (temp->right == p)
-					found = true;
-			}
 			if (temp->left != 0) {
 				children->push(temp->left);
-				if (temp->left == p)
-					found = true;
+				if (temp->left == node)
+					nodeFound = true;
+			}
+			if (temp->right != 0) {
+				children->push(temp->right);
+				if (temp->right == node)
+					nodeFound = true;
 			}
 		}
 		parents = children;
-		children = new queue<BSTNode*>();	
+		children = new queue<BSTNode*>();
 	}
-	if (not found or parents->empty())
+	if (not nodeFound)
 		return 0;
-	if (parents->front() == p) {
+	if (parents->front() == node)
 		parents->pop();
-	}
 	return parents->front();
 }

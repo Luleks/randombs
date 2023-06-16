@@ -1,25 +1,22 @@
-bool edgeExists(GraphNode* a, GraphNode* b) {
-	if (a == 0 or b == 0)
+bool edgeExists(GraphNode* node1, GraphNode* node2) {
+	if (node1 == 0 or node2 == 0)
 		return false;
-	else if (a == b)
-		return true;
-	GraphEdge* edge = a->adj;
-	while (edge != 0 and edge->dest != b)
+	GraphEdge* edge = node1->adj;
+	while (edge != 0 and edge->dest != node2)
 		edge = edge->next;
 	return edge != 0;
 }
-
 bool isConnected() {
 	if (start == 0)
-		return false;
+		return true;
 	GraphNode* temp = start;
 	while (temp != 0) {
 		temp->status = 1;
 		temp = temp->next;
 	}
+	queue<GraphNode*> qju;
 	int count = 0;
 	temp = start;
-	queue<GraphNode*> qju;
 	qju.push(temp);
 	temp->status = 2;
 	while (not qju.empty()) {
@@ -38,10 +35,9 @@ bool isConnected() {
 	}
 	return count == numOfElements;
 }
-
 void connectGraph() {
 	GraphNode* temp = start;
-	while (not isConnected() or temp == 0) {
+	while (not isConnected()) {
 		if (not edgeExists(start, temp)) {
 			start->adj = new GraphEdge(temp, start->adj);
 			temp->adj = new GraphEdge(start, temp->adj);
@@ -49,42 +45,43 @@ void connectGraph() {
 		temp = temp->next;
 	}
 }
-
 void connectGraphOptimal() {
 	if (start == 0)
 		return;
 	GraphNode* temp = start;
 	while (temp != 0) {
-		temp->status = 1;
+		temp->status = 0;
 		temp = temp->next;
 	}
 	temp = start;
-	GraphNode* toStartSearchFrom = temp;
-	stack<GraphNode*> stek;
+	queue<GraphNode*> qju;
+	GraphNode* nextNode = temp;
+
 	while (temp != 0) {
-		stek.push(temp);
-		temp->status = 2;
-		while (not stek.empty()) {
-			temp = stek.top();
-			stek.pop();
-			temp->status = 3;
+		qju.push(temp);
+		temp->status = 1;
+		while (not qju.empty()) {
+			temp = qju.front();
+			qju.pop();
+			temp->status = 2;
 			GraphEdge* edge = temp->adj;
 			while (edge != 0) {
-				if (edge->dest->status == 1) {
-					stek.push(edge->dest);
-					edge->dest->status = 2;
+				if (edge->dest->status == 0) {
+					qju.push(edge->dest);
+					edge->dest->status = 1;
 				}
 				edge = edge->next;
 			}
 		}
-		toStartSearchFrom->status = 4;
-		while (toStartSearchFrom != 0 and toStartSearchFrom->status != 1)
-			toStartSearchFrom = toStartSearchFrom->next;
-		temp = toStartSearchFrom;
+		nextNode->status = 3;
+		while (nextNode != 0 and nextNode->status != 0) {
+			nextNode = nextNode->next;
+		}
+		temp = nextNode;
 	}
 	temp = start->next;
 	while (temp != 0) {
-		if (temp->status == 4) {
+		if (temp->status == 3) {
 			temp->adj = new GraphEdge(start, temp->adj);
 			start->adj = new GraphEdge(temp, start->adj);
 		}
