@@ -1,0 +1,7 @@
+﻿  Graph.cpp
+C:\Users\Luka&Jana\Desktop\Grapshap\Grapshap\Graph.h(67,16): warning C4553: '==': result of expression not used; did you intend '='?
+  main.cpp
+C:\Users\Luka&Jana\Desktop\Grapshap\Grapshap\Graph.h(67,16): warning C4553: '==': result of expression not used; did you intend '='?
+  Generating Code...
+C:\Users\Luka&Jana\Desktop\Grapshap\Grapshap\Graph.cpp(64): warning C4715: 'Graph::insertEdge': not all control paths return a value
+  Grapshap.vcxproj -> C:\Users\Luka&Jana\Desktop\Grapshap\x64\Debug\Grapshap.exe
